@@ -29,7 +29,7 @@ public class Dan : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Rigidbody otherRB = other.GetComponent<Rigidbody>();
-        if (otherRB != null &&  other.gameObject.name != "Player")
+        if (otherRB != null)
         {
             otherRB.AddForce((other.transform.position - transform.position) * power, ForceMode.Impulse);
             Destroy(gameObject);
