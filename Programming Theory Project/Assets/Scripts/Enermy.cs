@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enermy : Human
+public class Enermy : Human // INHERITANCE
 {
     [SerializeField]
     private GameObject player;
@@ -15,12 +15,12 @@ public class Enermy : Human
         player = GameObject.Find("Player");
         spawnManager = GameObject.Find("Spawn Manager");
     }
-    public override void move()
+    public override void move()// POLYMORPHISM
     {
         transform.LookAt(player.transform);
     }
 
-    public override void Attack()
+    public override void Attack()// POLYMORPHISM
     {
         if (!isCooldown)
         {
@@ -35,12 +35,12 @@ public class Enermy : Human
         isCooldown = false;
     }
 
-    public override Vector3 MovementDirection()
+    public override Vector3 MovementDirection()// POLYMORPHISM
     {
         return (player.transform.position - transform.position).normalized  * 0.5f;
     }
 
-    public override void TuHuy()
+    public override void TuHuy()// POLYMORPHISM
     {
         if (transform.position.y < -yBound)
         {
